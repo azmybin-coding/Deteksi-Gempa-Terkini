@@ -36,7 +36,6 @@ def ekstraksi_data():
         lokasi = None
         dirasakan = None
         for res in result:
-            print(i, res)
             if i == 1:
                 magnitudo = res.text
             elif i == 2:
@@ -49,18 +48,14 @@ def ekstraksi_data():
                 dirasakan = res.text
             i = i + 1
 
-
-
-
-
         hasil = dict()
-        hasil["tanggal"] = tanggal #"24 Agustus 2021"
-        hasil["waktu"] = waktu #"12:05:52 WIB"
-        hasil["magnitudo"] = magnitudo #4.0
-        hasil["kedalaman"] = kedalaman#"40 km"
-        hasil["koordinat"] = koordinat#"40 km"
-        hasil["lokasi"] = lokasi#{"ls":1.48, "bt":134.01}
-        hasil["dirasakan"] = dirasakan#{"ls":1.48, "bt":134.01}
+        hasil["tanggal"] = tanggal
+        hasil["waktu"] = waktu
+        hasil["magnitudo"] = magnitudo
+        hasil["kedalaman"] = kedalaman
+        hasil["koordinat"] = koordinat
+        hasil["lokasi"] = lokasi
+        hasil["dirasakan"] = dirasakan
         return hasil
     else:
         return None
@@ -78,5 +73,3 @@ def tampilkan_data(result):
     print(f"Lokasi {result['lokasi']}")
     print(f"Dirasakan {result['dirasakan']}")
 
-# if __name__ == "__main__":
-#     print(("ini adalah package gempa terkini"))
